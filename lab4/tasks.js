@@ -3,6 +3,7 @@ function task1() {
     let fruits = ["яблуко", "банан", "груша", "апельсин"];
 
     console.log("Завдання 1");
+    console.log("Початковий масив: ", fruits);
 
     fruits.pop();
     console.log("1) Після видалення останнього елемента:", fruits);
