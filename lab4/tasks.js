@@ -75,7 +75,7 @@ function task3() {
     console.log("Початковий масив працівників:", employees);
 
     employees.sort(function (a, b) {
-        return a.name.localeCompare(b.name, 'uk'); // 'uk' для української мови
+        return a.name.localeCompare(b.name, 'uk');
     });
 
     console.log("1) Масив після сортування за іменами:", employees);
@@ -131,7 +131,7 @@ function task4() {
     students.sort(function (a, b) {
         return b.age - a.age;
     });
-    console.log("3) Масив після сортування за віком (старший → молодший):", students);
+    console.log("3) Масив після сортування за віком (від старшого до молодшого):", students);
 
     let thirdCourseStudents = [];
     for (let i = 0; i < students.length; i++) {
