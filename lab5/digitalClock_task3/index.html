@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Дата та час</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Дата та час</h1>
+
+    <div class="block">
+        <h2>Цифровий годинник</h2>
+        <div id="clock" class="clock">00:00:00</div>
+    </div>
+
+    <div class="block">
+        <h2>Таймер зворотного відліку</h2>
+        <input type="datetime-local" id="countdownInput">
+        <button id="startTimer">Запустити таймер</button>
+        <p id="countdownText">Оберіть дату і час</p>
+    </div>
+
+    <div class="block">
+        <h2>Календар</h2>
+        <input type="month" id="monthInput">
+        <div id="monthTitle" class="month-title"></div>
+        <div class="weekdays">
+            <div>Пн</div>
+            <div>Вт</div>
+            <div>Ср</div>
+            <div>Чт</div>
+            <div>Пт</div>
+            <div>Сб</div>
+            <div>Нд</div>
+        </div>
+        <div id="calendar" class="calendar"></div>
+    </div>
+
+    <div class="block">
+        <h2>До наступного дня народження</h2>
+        <input type="date" id="birthdayInput">
+        <p id="birthdayText">Оберіть дату народження</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
