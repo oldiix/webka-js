@@ -1,0 +1,55 @@
+body {
+    text-align: center;
+    background: gray;
+    color: white;
+    font-family: Sans-Serif;
+}
+
+.lamp-container {
+    margin: 40px;
+}
+
+.lamp {
+    width: 100px;
+    height: 100px;
+    background: #888;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    transition: 0.5s;
+}
+
+
+.lamp::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background: #444;
+    top: -30px;
+    left: 35px;
+    border-radius: 5px;
+}
+
+.lamp.on {
+    background: yellow;
+    box-shadow: 0 0 50px yellow;
+}
+
+
+.lamp.eco.on {
+    background: lightgreen;
+    box-shadow: 0 0 50px lightgreen;
+}
+
+.lamp.led.on {
+    background: lightblue;
+    box-shadow: 0 0 50px lightblue;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
