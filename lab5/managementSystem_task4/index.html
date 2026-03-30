@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <h1>Store Products</h1>
+
+    <div class="panel">
+        <h2>Add Product</h2>
+        <input type="text" id="nameInput" placeholder="Product name">
+        <input type="number" id="priceInput" placeholder="Price">
+        <input type="number" id="stockInput" placeholder="Stock">
+        <button id="addBtn">Add</button>
+    </div>
+
+    <div class="panel">
+        <h2>Update Product</h2>
+        <input type="number" id="updateIdInput" placeholder="Product ID">
+        <input type="number" id="updatePriceInput" placeholder="New price">
+        <input type="number" id="updateStockInput" placeholder="New stock">
+        <button id="updateBtn">Update</button>
+    </div>
+
+    <div class="panel">
+        <h2>Delete Product</h2>
+        <input type="number" id="deleteIdInput" placeholder="Product ID">
+        <button id="deleteBtn">Delete</button>
+    </div>
+
+    <div class="panel">
+        <h2>Search Product</h2>
+        <input type="text" id="searchInput" placeholder="Enter product name">
+        <button id="searchBtn">Search</button>
+        <div id="searchResult"></div>
+    </div>
+
+    <div class="panel">
+        <h2>Place Order</h2>
+        <input type="text" id="customerInput" placeholder="Customer name">
+        <select id="productSelect">
+            <option value="">Select product</option>
+        </select>
+        <input type="number" id="quantityInput" placeholder="Quantity">
+        <button id="orderBtn">Order</button>
+    </div>
+
+    <div class="panel">
+        <h2>Catalog</h2>
+        <div id="catalog"></div>
+    </div>
+
+    <div class="panel">
+        <h2>Log</h2>
+        <div id="log"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
