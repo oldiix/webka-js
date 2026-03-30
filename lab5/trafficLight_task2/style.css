@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+    font-family: Segoe UI;
+}
+
+.traffic {
+    width: 100px;
+    margin: auto;
+    padding: 10px;
+    background: #333;
+    border-radius: 10px;
+}
+
+.light {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 10px auto;
+    background: #555;
+    transition: 0.3s;
+}
+
+.red {
+    background: red;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.green {
+    background: green;
+}
