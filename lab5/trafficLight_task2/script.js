@@ -10,7 +10,7 @@ let redTime = 5;
 let yellowTime = 3;
 let greenTime = 7;
 
-let state = 0; // 0-red,1-yellow,2-green,3-blink
+let state = 0;
 let timer;
 let interval;
 
