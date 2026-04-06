@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список завдань</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="app-header">
+        <h1>Task Board</h1>
+        <p class="subtitle">Організуй свій день</p>
+    </header>
+
+    <main>
+        <form id="task-form" class="task-form">
+            <label for="task-input" class="visually-hidden">Нове завдання</label>
+            <input
+                    type="text"
+                    id="task-input"
+                    placeholder="Що потрібно зробити?"
+                    required
+                    minlength="2"
+                    maxlength="200"
+                    autocomplete="off"
+            >
+            <button type="submit" class="btn-add">+ Додати</button>
+        </form>
+
+        <div class="sort-panel">
+            <span class="sort-label">Сортування:</span>
+            <div id="sort-bar" class="sort-bar">
+                <button class="active" data-sort="dateCreated">За створенням</button>
+                <button data-sort="dateUpdated">За оновленням</button>
+                <button data-sort="status">За статусом</button>
+            </div>
+        </div>
+
+        <ul id="task-list" class="task-list"></ul>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
