@@ -61,7 +61,6 @@ const buildItem = (task) => {
     li.className = `task-item anim-in${task.completed ? ' completed-item' : ''}`;
     li.dataset.id = task.id;
 
-    // Чекбокс
     const cb = document.createElement('input');
     cb.type = 'checkbox';
     cb.className = 'task-check';
