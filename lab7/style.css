@@ -1,0 +1,667 @@
+@font-face {
+    font-family: "Digital-7";
+    src: url('fonts/digital-7.ttf') format('truetype');
+}
+
+body {
+    background: #000;
+    font-family: "Press Start 2P", cursive;
+    margin: 0;
+    overflow: hidden;
+}
+
+.game-menu {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 800px;
+    height: 480px;
+    background: url('img/main-background.png') no-repeat center center;
+    background-size: cover;
+}
+
+.game-menu__title {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    font-size: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #e20f0f;
+    line-height: 1.3;
+}
+
+.button {
+    position: fixed;
+    left: 50%;
+    top: 70%;
+    transform: translate3d(-50%, -50%, 0);
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-family: "Press Start 2P", cursive;
+    font-size: 30px;
+    text-transform: uppercase;
+    background: transparent;
+    color: #e20f0f;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.button:hover {
+    color: #fff;
+}
+
+.button:active {
+    color: #aaa;
+}
+
+.button-restart,
+.button-next-level {
+    display: none;
+    top: 90%;
+}
+
+#btn-play-again {
+    display: block;
+    top: 75%;
+}
+
+.wrapper {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 55%;
+    transform: translate3d(-50%, -50%, 0);
+    height: 750px;
+    width: 900px;
+    box-sizing: border-box;
+}
+
+.game-screen {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    box-sizing: border-box;
+    width: 800px;
+    height: 480px;
+    overflow: hidden;
+    background: url('img/bg.png') no-repeat center center;
+    background-size: cover;
+}
+
+.game-screen--death {
+    animation: screen-death 3s linear forwards;
+}
+
+@keyframes screen-death {
+    0% {
+        box-shadow: inset 0 0 500px rgba(215, 35, 0, 0.9);
+    }
+    50% {
+        box-shadow: inset 0 0 300px rgba(215, 35, 0, 0.6);
+    }
+    100% {
+        box-shadow: inset 0 0 100px rgba(215, 35, 0, 0.2);
+    }
+}
+
+.message {
+    position: absolute;
+    left: 57%;
+    top: 36%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 1000;
+    color: #fff;
+    font-family: "Press Start 2P", cursive;
+}
+
+.message--fire {
+    width: 116px;
+    height: 68px;
+    background: url('img/fire-right.png') no-repeat;
+    left: 60%;
+}
+
+.message--dead {
+    left: 50%;
+    top: 30%;
+    font-size: 28px;
+    color: #e20f0f;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.message--win {
+    left: 50%;
+    top: 30%;
+    font-size: 28px;
+    color: #80d010;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.game-panels {
+    display: none;
+}
+
+.white-line {
+    position: absolute;
+    left: 50px;
+    top: 10%;
+    z-index: 700;
+    width: 800px;
+    border-bottom: 2px solid #fff;
+}
+
+.players-panel, .time-panel, .score-panel {
+    padding: 10px;
+    font-family: "Press Start 2P", cursive;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #80d010;
+}
+
+.time-panel {
+    position: absolute;
+    left: 70%;
+    top: 2px;
+    z-index: 700;
+}
+
+.time-panel__you,
+.time-panel__gunman {
+    font-family: "Digital-7", monospace;
+    font-size: 65px;
+}
+
+.time-panel__you {
+    margin-bottom: 5px;
+}
+
+.players-panel {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 700;
+    box-sizing: border-box;
+}
+
+.players-panel__you,
+.players-panel__gunman {
+    padding: 10px;
+    border: 2px solid #80d010;
+    border-radius: 10px;
+}
+
+.players-panel__you {
+    margin-bottom: 10px;
+}
+
+.score-panel__score {
+    position: absolute;
+    left: 25%;
+    top: 85%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 700;
+    box-sizing: border-box;
+}
+
+.score-panel__level {
+    position: absolute;
+    left: 70%;
+    top: 85%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 700;
+    box-sizing: border-box;
+}
+
+
+.win-screen {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    box-sizing: border-box;
+    width: 800px;
+    height: 480px;
+    background: url('img/main-background.png') no-repeat center center;
+    background-size: cover;
+}
+
+.win-screen__title {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    font-size: 40px;
+    line-height: 70px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #80d010;
+    text-shadow: 2px 2px 0 #000;
+}
+
+
+.gunman-wrap {
+    position: absolute;
+    bottom: 130px;
+    z-index: 900;
+    overflow: visible;
+    transform: scale(3);
+    transform-origin: bottom left;
+    cursor: url('img/aim_2.png') 32 32, crosshair;
+}
+
+.gunman {
+    image-rendering: pixelated;
+    background-image: url('img/gunman.png');
+    background-repeat: no-repeat;
+}
+
+/* The Bandit */
+
+.char-1 {
+    height: 65px;
+}
+
+.char-1.walk {
+    animation: c1-walk 0.6s step-end infinite;
+}
+
+@keyframes c1-walk {
+    0% {
+        width: 33px;
+        background-position: 0 0;
+    }
+    33% {
+        width: 33px;
+        background-position: -33px 0;
+    }
+    66% {
+        width: 32px;
+        background-position: -66px 0;
+    }
+    100% {
+        width: 33px;
+        background-position: 0 0;
+    }
+}
+
+.char-1.stand {
+    width: 34px;
+    background-position: -98px 0;
+}
+
+.char-1.ready {
+    animation: c1-ready 0.2s step-end infinite;
+}
+
+@keyframes c1-ready {
+    0% {
+        width: 35px;
+        background-position: -200px 0;
+    }
+    50% {
+        width: 34px;
+        background-position: -98px 0;
+    }
+    100% {
+        width: 35px;
+        background-position: -200px 0;
+    }
+}
+
+.char-1.shoot {
+    width: 33px;
+    background-position: -235px 0;
+}
+
+.char-1.death {
+    animation: c1-death 3.5s step-end forwards;
+}
+
+@keyframes c1-death {
+    0% {
+        width: 35px;
+        background-position: -302px 0;
+    }
+    19% {
+        width: 34px;
+        background-position: -337px 0;
+    }
+    38% {
+        width: 31px;
+        background-position: -371px 0;
+    }
+    100% {
+        width: 31px;
+        background-position: -371px 0;
+    }
+}
+
+/* The Deputy */
+
+.char-2 {
+    height: 76px;
+}
+
+.char-2.walk {
+    animation: c2-walk 0.6s step-end infinite;
+}
+
+@keyframes c2-walk {
+    0% {
+        width: 33px;
+        background-position: 0 -65px;
+    }
+    33% {
+        width: 34px;
+        background-position: -33px -65px;
+    }
+    66% {
+        width: 33px;
+        background-position: -67px -65px;
+    }
+    100% {
+        width: 33px;
+        background-position: 0 -65px;
+    }
+}
+
+.char-2.stand {
+    width: 31px;
+    background-position: -100px -65px;
+}
+
+.char-2.ready {
+    animation: c2-ready 0.2s step-end infinite;
+}
+
+@keyframes c2-ready {
+    0% {
+        width: 26px;
+        background-position: -182px -65px;
+    }
+    50% {
+        width: 31px;
+        background-position: -100px -65px;
+    }
+    100% {
+        width: 26px;
+        background-position: -182px -65px;
+    }
+}
+
+.char-2.shoot {
+    width: 29px;
+    background-position: -208px -65px;
+}
+
+.char-2.death {
+    animation: c2-death 3.5s step-end forwards;
+}
+
+@keyframes c2-death {
+    0% {
+        width: 31px;
+        background-position: -237px -65px;
+    }
+    28% {
+        width: 38px;
+        background-position: -268px -65px;
+    }
+    57% {
+        width: 38px;
+        background-position: -268px -65px;
+    }
+    100% {
+        width: 38px;
+        background-position: -268px -65px;
+    }
+}
+
+/* Quick Draw */
+
+.char-3 {
+    height: 84px;
+}
+
+.char-3.walk {
+    animation: c3-walk 0.5s infinite;
+}
+
+@keyframes c3-walk {
+    0%, 32.99% {
+        width: 27px;
+        background-position: 0 -141px;
+    }
+    33%, 65.99% {
+        width: 27px;
+        background-position: -27px -141px;
+    }
+    66%, 99.99% {
+        width: 28px;
+        background-position: -54px -141px;
+    }
+    100% {
+        width: 27px;
+        background-position: 0 -141px;
+    }
+}
+
+.char-3.stand {
+    width: 31px;
+    background-position: -82px -141px;
+}
+
+.char-3.ready {
+    animation: c3-ready 0.2s infinite;
+}
+
+@keyframes c3-ready {
+    0%, 49.99% {
+        width: 31px;
+        background-position: -141px -141px;
+    }
+    50%, 99.99% {
+        width: 31px;
+        background-position: -82px -141px;
+    }
+    100% {
+        width: 31px;
+        background-position: -141px -141px;
+    }
+}
+
+.char-3.shoot {
+    width: 31px;
+    background-position: -172px -141px;
+}
+
+.char-3.death {
+    animation: c3-death 3.5s step-end forwards;
+}
+
+@keyframes c3-death {
+    0%, 32.99% {
+        width: 32px;
+        background-position: -205px -141px;
+    }
+    33%, 65.99% {
+        width: 19px;
+        background-position: -238px -141px;
+    }
+    66%, 100% {
+        width: 31px;
+        background-position: -260px -141px;
+    }
+}
+
+/* El-Sombrero */
+
+.char-4 {
+    height: 68px;
+}
+
+.char-4.walk {
+    animation: c4-walk 0.65s step-end infinite;
+}
+
+@keyframes c4-walk {
+    0% {
+        width: 32px;
+        background-position: 0 -225px;
+    }
+    33% {
+        width: 34px;
+        background-position: -32px -225px;
+    }
+    66% {
+        width: 34px;
+        background-position: -66px -225px;
+    }
+    100% {
+        width: 32px;
+        background-position: 0 -225px;
+    }
+}
+
+.char-4.stand {
+    width: 33px;
+    background-position: -100px -225px;
+}
+
+.char-4.ready {
+    animation: c4-ready 0.2s step-end infinite;
+}
+
+@keyframes c4-ready {
+    0% {
+        width: 33px;
+        background-position: -166px -225px;
+    }
+    50% {
+        width: 33px;
+        background-position: -100px -225px;
+    }
+    100% {
+        width: 33px;
+        background-position: -166px -225px;
+    }
+}
+
+.char-4.shoot {
+    width: 34px;
+    background-position: -199px -225px;
+}
+
+.char-4.death {
+    animation: c4-death 3.5s step-end forwards;
+}
+
+@keyframes c4-death {
+    0% {
+        width: 33px;
+        background-position: -233px -225px;
+    }
+    19% {
+        width: 33px;
+        background-position: -266px -225px;
+    }
+    38% {
+        width: 38px;
+        background-position: -299px -225px;
+    }
+    100% {
+        width: 38px;
+        background-position: -299px -225px;
+    }
+}
+
+/* The Sheriff */
+
+.char-5 {
+    height: 72px;
+}
+
+.char-5.walk {
+    animation: c5-walk 0.6s step-end infinite;
+}
+
+@keyframes c5-walk {
+    0% {
+        width: 32px;
+        background-position: 0 -293px;
+    }
+    33% {
+        width: 34px;
+        background-position: -32px -293px;
+    }
+    66% {
+        width: 34px;
+        background-position: -66px -293px;
+    }
+    100% {
+        width: 32px;
+        background-position: 0 -293px;
+    }
+}
+
+.char-5.stand {
+    width: 31px;
+    background-position: -100px -293px;
+}
+
+.char-5.ready {
+    animation: c5-ready 0.2s step-end infinite;
+}
+
+@keyframes c5-ready {
+    0% {
+        width: 31px;
+        background-position: -162px -293px;
+    }
+    50% {
+        width: 31px;
+        background-position: -100px -293px;
+    }
+    100% {
+        width: 31px;
+        background-position: -162px -293px;
+    }
+}
+
+.char-5.shoot {
+    width: 35px;
+    background-position: -224px -293px;
+}
+
+.char-5.death {
+    animation: c5-death 3.5s forwards;
+}
+
+@keyframes c5-death {
+    0%, 18.99% {
+        width: 33px;
+        background-position: -259px -293px;
+    }
+    19%, 37.99% {
+        width: 23px;
+        background-position: -292px -293px;
+    }
+    38%, 56.99% {
+        width: 39px;
+        background-position: -315px -293px;
+    }
+    57%, 100% {
+        width: 46px;
+        background-position: -354px -293px;
+    }
+}
