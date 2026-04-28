@@ -176,7 +176,7 @@ body {
 .time-panel__you,
 .time-panel__gunman {
     font-family: "Digital-7", monospace;
-    font-size: 65px;
+    font-size: 60px;
 }
 
 .time-panel__you {
@@ -206,7 +206,7 @@ body {
 .score-panel__score {
     position: absolute;
     left: 25%;
-    top: 85%;
+    top: 86%;
     transform: translate3d(-50%, -50%, 0);
     z-index: 700;
     box-sizing: border-box;
