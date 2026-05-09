@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f5f6fa;
+    min-height: 100vh;
+    padding: 30px 20px;
+    color: #333;
+}
+
+.app {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hint {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.edit-btn {
+    padding: 8px 22px;
+    background: white;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.edit-btn:hover {
+    border-color: #4a90e2;
+    color: #4a90e2;
+}
+
+.edit-btn.active {
+    background: #eef4ff;
+    border-color: #4a90e2;
+    color: #4a90e2;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.lang-card {
+    position: relative;
+    background: #fafafa;
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    padding: 18px 12px;
+    text-align: center;
+    cursor: default;
+    transition: box-shadow 0.2s;
+}
+
+.lang-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.lang-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 12px;
+}
+
+.lang-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.lang-desc {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Хрестик видалення */
+.delete-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 24px;
+    height: 24px;
+    background: #ff5252;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+.delete-btn:hover {
+    background: #e53935;
+    transform: scale(1.1);
+}
+
+/* Режим редагування */
+.app.edit-mode .lang-card {
+    animation: wiggle 0.4s ease-in-out infinite;
+    cursor: grab;
+}
+
+.app.edit-mode .lang-card:active {
+    cursor: grabbing;
+}
+
+.app.edit-mode .delete-btn {
+    display: flex;
+}
+
+.app.edit-mode .lang-card:nth-child(2n) {
+    animation-delay: -0.2s;
+}
+
+.app.edit-mode .lang-card:nth-child(3n) {
+    animation-delay: -0.1s;
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-1.2deg);
+    }
+    50% {
+        transform: rotate(1.2deg);
+    }
+}
+
+.lang-card.dragging {
+    opacity: 0.4;
+    animation: none !important;
+}
+
+.lang-card.drop-placeholder {
+    background: #eef4ff;
+    border: 2px dashed #4a90e2;
+    animation: none !important;
+}
+
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .panel {
+        justify-content: center;
+    }
+}
