@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+    <h1>Kanban Board</h1>
+
+    <div class="board">
+        <div class="column" data-column="todo">
+            <div class="column-header todo-header">To do</div>
+            <div class="column-body" data-dropzone="todo">
+                <div class="task" draggable="true" data-id="t1">Створити макет головної сторінки</div>
+                <div class="task" draggable="true" data-id="t2">Налаштувати ESLint та Prettier</div>
+                <div class="task" draggable="true" data-id="t3">Написати документацію</div>
+                <div class="task" draggable="true" data-id="t4">Додати темну тему</div>
+            </div>
+        </div>
+
+        <div class="column" data-column="working">
+            <div class="column-header working-header">Working</div>
+            <div class="column-body" data-dropzone="working">
+                <div class="task" draggable="true" data-id="t5">Реалізувати авторизацію</div>
+                <div class="task" draggable="true" data-id="t6">Інтегрувати API погоди</div>
+                <div class="task" draggable="true" data-id="t7">Оптимізувати завантаження зображень</div>
+            </div>
+        </div>
+
+        <div class="column" data-column="done">
+            <div class="column-header done-header">Done</div>
+            <div class="column-body" data-dropzone="done">
+                <div class="task" draggable="true" data-id="t8">Налаштувати GitHub Pages</div>
+                <div class="task" draggable="true" data-id="t9">Створити репозиторій</div>
+                <div class="task" draggable="true" data-id="t10">Обрати стек технологій</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
