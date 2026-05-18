@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-view" id="login-view">
+    <div class="login-card">
+        <div class="tabs" data-active="register">
+            <button class="tab active" data-tab="register">Реєстрація</button>
+            <button class="tab" data-tab="login">Вхід</button>
+            <div class="tab-indicator"></div>
+        </div>
+
+        <div class="form-panel active" id="panel-register">
+            <h2 class="form-title">Створити акаунт</h2>
+            <form id="form-register" novalidate>
+                <div class="field">
+                    <label for="reg-username">Username</label>
+                    <input id="reg-username" type="text" placeholder="Придумайте логін">
+                    <span class="error-msg" id="err-reg-username"></span>
+                </div>
+                <div class="field">
+                    <label for="reg-password">Пароль</label>
+                    <input id="reg-password" type="password" placeholder="Мінімум 6 символів">
+                    <span class="error-msg" id="err-reg-password"></span>
+                </div>
+                <button type="submit" class="btn-submit">Зареєструватись</button>
+            </form>
+        </div>
+
+        <div class="form-panel" id="panel-login">
+            <h2 class="form-title">Вхід в акаунт</h2>
+            <form id="form-login" novalidate>
+                <div class="field">
+                    <label for="login-username">Username</label>
+                    <input id="login-username" type="text" placeholder="Введіть логін">
+                    <span class="error-msg" id="err-login-username"></span>
+                </div>
+                <div class="field">
+                    <label for="login-password">Пароль</label>
+                    <input id="login-password" type="password" placeholder="Мінімум 6 символів">
+                    <span class="error-msg" id="err-login-password"></span>
+                </div>
+                <button type="submit" class="btn-submit">Увійти</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="app-view hidden" id="app-view">
+
+    <header class="app-header">
+        <h1 class="app-logo">Friend Finder</h1>
+        <div class="user-info">
+            <span id="user-greeting"></span>
+            <span class="fav-counter">❤️ <span id="fav-count">0</span></span>
+            <button class="btn-secondary" id="btn-logout">Вийти</button>
+        </div>
+    </header>
+
+    <div class="toolbar">
+        <input type="text" id="search-input" placeholder="Пошук за іменем або email...">
+
+        <select id="sort-select">
+            <option value="">Без сортування</option>
+            <option value="name-asc">Ім'я A-Z</option>
+            <option value="name-desc">Ім'я Z-A</option>
+            <option value="age-asc">Молодші</option>
+            <option value="age-desc">Старші</option>
+            <option value="registered-desc">Нові реєстрації</option>
+        </select>
+
+        <select id="filter-gender">
+            <option value="">Усі статі</option>
+            <option value="male">Чоловіки</option>
+            <option value="female">Жінки</option>
+        </select>
+
+        <input type="number" id="filter-age-min" placeholder="Вік від" min="0" max="100">
+        <input type="number" id="filter-age-max" placeholder="Вік до" min="0" max="100">
+
+        <button class="btn-reset" id="btn-reset">Скинути</button>
+    </div>
+
+    <main class="content">
+        <div class="state-block hidden" id="state-loading">
+            <div class="spinner"></div>
+            <p>Завантаження...</p>
+        </div>
+
+        <div class="state-block hidden" id="state-error">
+            <p id="error-text">Помилка завантаження</p>
+            <button class="btn-submit" id="btn-retry">Спробувати ще</button>
+        </div>
+
+        <div class="state-block hidden" id="state-empty">
+            <p>Нікого не знайдено</p>
+        </div>
+
+        <div class="cards-grid" id="cards-grid"></div>
+
+        <nav class="pagination" id="pagination"></nav>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
